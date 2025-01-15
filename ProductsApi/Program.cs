@@ -11,7 +11,6 @@ using System.Text;
 using ProductsApi;
 using ProductsApi.Models.Interfaces;
 using ProductsApi.Data;
-using ProductsApi.Models.Interfaces;
 using ProductsApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -107,7 +106,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins("https://localhost:7295") // Change this to your front-end URL
+        policy.WithOrigins("https://localhost:7295", "https://productsapi-50kk.onrender.com") // Add your front-end URL here
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -117,15 +116,13 @@ builder.Services.AddCors(options =>
 // Build the application
 var app = builder.Build();
 
-// Use Swagger for API documentation in development
-if (app.Environment.IsDevelopment())
+// Enable Swagger and Swagger UI for all environments (development & production)
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Product API v1");
-    });
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Product API v1");
+    options.RoutePrefix = "swagger"; // Ensures the UI is accessible at /swagger
+});
 
 // Use CORS policy
 app.UseCors("AllowSpecificOrigins");
