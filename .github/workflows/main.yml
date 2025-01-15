@@ -1,11 +1,8 @@
 name: Pull Request Approval Workflow
 
 on:
-  push:
-   branches: [main]
-  pull_request:
-   branches: [main]
-
+  pull_request_review:
+    types: [submitted]
   
 jobs:
   build:
@@ -15,13 +12,13 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: setup MSBuild
+      - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v2.0.0
-        
-      - name: Restore Nuget packages
+
+      - name: Restore NuGet packages
         run: nuget restore ProductsApi.ProductsApi.sln
 
       - name: Build the Solution
