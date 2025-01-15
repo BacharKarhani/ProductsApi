@@ -1,29 +1,30 @@
-# Use the official ASP.NET Core runtime as a parent image
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+# This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER $APP_UID
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8080
+EXPOSE 8081
 
-# Build stage
+
+# This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["ProductsApi/ProductsApi.csproj", "ProductsApi/"]
+RUN dotnet restore "./ProductsApi/ProductsApi.csproj"
+COPY . .
+WORKDIR "/src/ProductsApi"
+RUN dotnet build "./ProductsApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Copy the .csproj file and restore any dependencies (via dotnet restore)
-COPY ["ProductsApi.csproj", "./"]
-RUN dotnet restore "./ProductsApi.csproj"
+# This stage is used to publish the service project to be copied to the final stage
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./ProductsApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# Copy the rest of the code
-COPY . . 
-
-# Publish the app to /app/publish directory in the container
-WORKDIR "/src/"
-RUN dotnet publish "ProductsApi.csproj" -c Release -o /app/publish
-
-# Final stage
+# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
-
-# Copy the published files from the build stage
-COPY --from=build /app/publish . 
-
-# Set the entry point to the application
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ProductsApi.dll"]
