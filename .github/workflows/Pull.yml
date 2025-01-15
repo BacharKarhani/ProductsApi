@@ -1,12 +1,15 @@
 name: Pull Request Approval Workflow
 
 on:
+  pull_request:
+    types: [opened, synchronize]  # Trigger when a pull request is created or updated
   pull_request_review:
-    types: [submitted]
-  
+    types: [submitted]  # Trigger when a review is submitted
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request_review.state == 'approved' }}  # Only run if the review is approved
 
     steps:
       - name: Checkout the repository
@@ -23,5 +26,3 @@ jobs:
 
       - name: Build the Solution
         run: msbuild ProductsApi.ProductsApi.sln
- 
-
