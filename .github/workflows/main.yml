@@ -1,0 +1,30 @@
+name: Pull Request Approval Workflow
+
+on:
+  push:
+    branches: [main]  # Trigger on push to the `main` branch
+  pull_request:
+    types: [opened, synchronize]  # Trigger on pull request creation or updates
+  pull_request_review:
+    types: [submitted]  # Trigger on pull request review submission
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request_review.state == 'approved' }}  # Only run if the review is approved
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2.0.0
+
+      - name: Restore NuGet packages
+        run: nuget restore ProductsApi.ProductsApi.sln
+
+      - name: Build the Solution
+        run: msbuild ProductsApi.ProductsApi.sln
