@@ -23,3 +23,4 @@ jobs:
 
       - name: Build the Solution
         run: msbuild ProductsApi.ProductsApi.sln
+ 
