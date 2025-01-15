@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request_review.state == 'approved' }}  # Only run if the review is approved
+    if: ${{ github.event.pull_request_review.state == 'approved' }}
 
     steps:
       - name: Checkout the repository
