@@ -24,7 +24,7 @@ namespace ProductsApi.Controllers
         }
 
 
-
+        [Authorize]
         [HttpPost("order")]
         public async Task<IActionResult> PlaceOrder([FromBody] OrderDto orderRequest)
         {
