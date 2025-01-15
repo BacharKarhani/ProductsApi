@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
 [ApiController]
 [Route("api/[controller]")]
 public class EmailController : ControllerBase
@@ -30,12 +34,12 @@ public class EmailController : ControllerBase
         }
     }
 
-    // New "hello" endpoint
     [HttpGet("hello")]
     public IActionResult GetHello()
     {
         return Ok(new { message = "Hello!" });
     }
+
 }
 
 public class EmailRequest
