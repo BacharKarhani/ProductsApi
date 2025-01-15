@@ -39,7 +39,6 @@ public class EmailController : ControllerBase
     {
         return Ok(new { message = "Hello!" });
 
-        Console.WriteLine("Hello");
 
     }
 
