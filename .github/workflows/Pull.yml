@@ -1,0 +1,25 @@
+name: Pull Request Approval Workflow
+
+on:
+  pull_request_review:
+    types: [submitted]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2.0.0
+
+      - name: Restore NuGet packages
+        run: nuget restore ProductsApi.ProductsApi.sln
+
+      - name: Build the Solution
+        run: msbuild ProductsApi.ProductsApi.sln
