@@ -38,6 +38,8 @@ public class EmailController : ControllerBase
     public IActionResult GetHello()
     {
         return Ok(new { message = "Hello!" });
+                        Console.WriteLine("Hello");
+
 
     }
 
