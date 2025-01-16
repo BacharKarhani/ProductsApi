@@ -14,7 +14,7 @@ public class EmailController : ControllerBase
     }
 
     [HttpPost("send")]
-    public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
+    public async Task<IActionResult> addsendemail([FromBody] EmailRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.Recipient) ||
             string.IsNullOrWhiteSpace(request.Subject) ||
@@ -38,7 +38,6 @@ public class EmailController : ControllerBase
     public IActionResult GetHello()
     {
         return Ok(new { message = "Hello!" });
-        Console.WriteLine("Hello");
 
     }
 
