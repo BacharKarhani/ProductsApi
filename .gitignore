@@ -8,3 +8,7 @@
 *.db-shm
 *.db-wal
 *.v2
+*.wsuo
+*.json
+*.suo
+*.config
