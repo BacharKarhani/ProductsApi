@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|c:\\users\\hcc\\source\\repos\\productsapi\\productsapi\\repository\\emailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|solutionrelative:productsapi\\repository\\emailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|c:\\users\\hcc\\source\\repos\\productsapi\\productsapi\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|solutionrelative:productsapi\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|c:\\users\\hcc\\source\\repos\\productsapi\\productsapi\\repository\\emailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|solutionrelative:productsapi\\repository\\emailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916CDAF1-9E7C-4D88-B6B8-B242E44DD865}|ProductsApi\\ProductsApi.csproj|c:\\users\\hcc\\source\\repos\\productsapi\\productsapi\\repository\\irepository\\iemailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,20 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IEmailRepository.cs",
-              "DocumentMoniker": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
-              "RelativeDocumentMoniker": "ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
-              "ToolTip": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
-              "RelativeToolTip": "ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T14:42:27.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EmailRepository.cs",
               "DocumentMoniker": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Repository\\EmailRepository.cs",
               "RelativeDocumentMoniker": "ProductsApi\\Repository\\EmailRepository.cs",
@@ -80,8 +67,32 @@
               "RelativeToolTip": "ProductsApi\\Controllers\\UserController.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAowIsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T09:05:23.674Z",
+              "WhenOpened": "2025-01-15T09:05:23.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "ProductsApi\\Controllers\\EmailController.cs",
+              "ToolTip": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "ProductsApi\\Controllers\\EmailController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T09:05:14.475Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
+              "RelativeDocumentMoniker": "ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
+              "ToolTip": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
+              "RelativeToolTip": "ProductsApi\\Repository\\IRepository\\IEmailRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T14:42:27.611Z"
             },
             {
               "$type": "Document",
@@ -94,19 +105,6 @@
               "ViewState": "AgIAAMEAAAAAAAAAAAAowOAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T09:05:19.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmailController.cs",
-              "DocumentMoniker": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Controllers\\EmailController.cs",
-              "RelativeDocumentMoniker": "ProductsApi\\Controllers\\EmailController.cs",
-              "ToolTip": "C:\\Users\\hcc\\source\\repos\\ProductsApi\\ProductsApi\\Controllers\\EmailController.cs",
-              "RelativeToolTip": "ProductsApi\\Controllers\\EmailController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T09:05:14.475Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
