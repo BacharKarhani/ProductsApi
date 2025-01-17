@@ -14,7 +14,7 @@ public class EmailController : ControllerBase
     }
 
     [HttpPost("send")]
-    public async Task<IActionResult> AddSendEmail([FromBody] EmailRequest request)
+    public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.Recipient) ||
             string.IsNullOrWhiteSpace(request.Subject) ||
